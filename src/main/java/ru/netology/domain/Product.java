@@ -5,8 +5,8 @@ public class Product {
     String title;
     int price;
 
-    public boolean matches(Product product, String search) {
-        if (product.getTitle().equalsIgnoreCase(search)) {
+    public boolean matches(String search) {
+        if (this.getTitle().equalsIgnoreCase(search)) {
             return true;
         }
         return false;

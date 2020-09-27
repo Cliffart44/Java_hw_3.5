@@ -10,25 +10,19 @@ class SmartphoneTest {
 
     @Test
     void shouldNotMatchesSearch() {
-        boolean actual = smartphone.matches(smartphone, "");
-        assertEquals(false, actual);
-    }
-
-    @Test
-    void bookShouldNotMatchesSmartphone() {
-        boolean actual = smartphone.matches(book, "Lewis Carroll");
+        boolean actual = smartphone.matches("");
         assertEquals(false, actual);
     }
 
     @Test
     void shouldMatchesBookByTitle() {
-        boolean actual = smartphone.matches(smartphone, "8.3");
+        boolean actual = smartphone.matches("8.3");
         assertEquals(true, actual);
     }
 
     @Test
     void shouldMatchesBookByManufacturer() {
-        boolean actual = smartphone.matches(smartphone, "Nokia");
+        boolean actual = smartphone.matches("Nokia");
         assertEquals(true, actual);
     }
 }

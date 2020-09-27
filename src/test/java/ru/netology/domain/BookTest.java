@@ -10,25 +10,19 @@ class BookTest {
 
     @Test
     void shouldNotMatchesSearch() {
-        boolean actual = book.matches(book, "");
-        assertEquals(false, actual);
-    }
-
-    @Test
-    void smartphoneShouldNotMatchesBook() {
-        boolean actual = book.matches(smartphone, "Nokia");
+        boolean actual = book.matches("");
         assertEquals(false, actual);
     }
 
     @Test
     void shouldMatchesBookByTitle() {
-        boolean actual = book.matches(book, "Alice’s Adventures in Wonderland");
+        boolean actual = book.matches("Alice’s Adventures in Wonderland");
         assertEquals(true, actual);
     }
 
     @Test
     void shouldMatchesBookByAuthor() {
-        boolean actual = book.matches(book, "Lewis Carroll");
+        boolean actual = book.matches("Lewis Carroll");
         assertEquals(true, actual);
     }
 }

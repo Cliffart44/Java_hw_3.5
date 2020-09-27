@@ -13,15 +13,12 @@ public class Smartphone extends Product {
     }
 
     @Override
-    public boolean matches(Product product, String search) {
-        if (super.matches(product, search)) {
+    public boolean matches(String search) {
+        if (super.matches(search)) {
             return true;
         }
-        if (product instanceof Smartphone) {
-            Smartphone smartphone = (Smartphone) product;
-            if (smartphone.getManufacturer().equalsIgnoreCase(search)) {
-                return true;
-            }
+        if (this.getManufacturer().equalsIgnoreCase(search)) {
+            return true;
         }
         return false;
     }

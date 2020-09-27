@@ -13,15 +13,12 @@ public class Book extends Product {
     }
 
     @Override
-    public boolean matches(Product product, String search) {
-        if (super.matches(product, search)) {
+    public boolean matches(String search) {
+        if (super.matches(search)) {
             return true;
         }
-        if (product instanceof Book) {
-            Book book = (Book) product;
-            if (book.getAuthor().equalsIgnoreCase(search)) {
-                return true;
-            }
+        if (this.getAuthor().equalsIgnoreCase(search)) {
+            return true;
         }
         return false;
     }
